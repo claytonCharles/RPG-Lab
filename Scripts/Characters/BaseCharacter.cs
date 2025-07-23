@@ -32,7 +32,7 @@ public partial class BaseCharacter : CharacterBody2D
 		Velocity = directions * Speed;
 	}
 	
-	public void SetAnimations()
+	public void SetMovimentAnimations()
 	{
 		if (Velocity.Y != 0) {
 			String animation = Velocity.Y > 0 ? "RunDown" : "RunUp";
@@ -61,6 +61,6 @@ public partial class BaseCharacter : CharacterBody2D
 	{
 		GetInput();
 		MoveAndSlide();
-		SetAnimations();
+		SetMovimentAnimations();
 	}
 }
