@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://x3u8n1bsr4c4"]
+
+[ext_resource type="PackedScene" uid="uid://cdna0v1egexan" path="res://Maps/Brimwood.tscn" id="1_kk6gk"]
+[ext_resource type="PackedScene" uid="uid://bxanagt4le4nf" path="res://Characters/Player.tscn" id="2_wcopx"]
+
+[node name="BrimwoodScene" type="Node2D"]
+
+[node name="Brimwood" parent="." instance=ExtResource("1_kk6gk")]
+
+[node name="Player" parent="." instance=ExtResource("2_wcopx")]
+position = Vector2(391, 382)
