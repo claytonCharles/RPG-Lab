@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://id4shu8a8gwj"]
+[gd_scene load_steps=10 format=3 uid="uid://id4shu8a8gwj"]
 
 [ext_resource type="Script" uid="uid://g2rrv3ar3xmd" path="res://Resources/Interactables/Tree/VerdantTree/VerdantTree.cs" id="1_6crov"]
 [ext_resource type="Texture2D" uid="uid://cqtd08fnxp3ln" path="res://Assets/Environment/Props/Static/Trees/Model_01/Size_02.png" id="1_udeee"]
@@ -397,9 +397,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3a7qv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6crov"]
-size = Vector2(23, 23)
-
 [node name="VerdantTree" type="StaticBody2D"]
 script = ExtResource("1_6crov")
 
@@ -418,9 +415,3 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_3a7qv")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(10, 10)
-shape = SubResource("RectangleShape2D_6crov")

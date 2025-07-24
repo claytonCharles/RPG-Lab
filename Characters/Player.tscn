@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bxanagt4le4nf"]
 
-[ext_resource type="PackedScene" uid="uid://bcr1yttwpw8un" path="res://Characters/BaseCharacter.tscn" id="1_t8hoq"]
+[ext_resource type="PackedScene" uid="uid://bcr1yttwpw8un" path="res://Characters/base_character.tscn" id="1_t8hoq"]
 [ext_resource type="Texture2D" uid="uid://dwa186tbptsih" path="res://Assets/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Side-Sheet.png" id="2_oo13o"]
 [ext_resource type="Texture2D" uid="uid://ckjyqi0rrf3p0" path="res://Assets/Entities/Characters/Body_A/Animations/Run_Base/Run_Side-Sheet.png" id="3_1ju47"]
 [ext_resource type="Texture2D" uid="uid://dr1p3ewt14m28" path="res://Assets/Entities/Characters/Body_A/Animations/Run_Base/Run_Up-Sheet.png" id="4_ynroq"]
@@ -8,6 +8,59 @@
 [ext_resource type="Texture2D" uid="uid://cehbgmw4fv6li" path="res://Assets/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Up-Sheet.png" id="6_qhb0e"]
 [ext_resource type="Texture2D" uid="uid://ynmrkurgcfbi" path="res://Assets/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Down-Sheet.png" id="7_7pihf"]
 [ext_resource type="Texture2D" uid="uid://c6u40ypvf1fnd" path="res://Assets/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Side-Sheet.png" id="8_7pihf"]
+
+[sub_resource type="Animation" id="Animation_x35ji"]
+resource_name = "AxeTool"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_7pihf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InteractionsArea/Collision:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_nwlvs"]
 resource_name = "IdleDown"
@@ -188,7 +241,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("InteractionsArea/CollisionShape2D:disabled")
+tracks/4/path = NodePath("InteractionsArea/Collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -324,59 +377,6 @@ tracks/2/keys = {
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_x35ji"]
-resource_name = "AxeTool"
-length = 0.8
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_7pihf")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Texture:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("InteractionsArea/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ju47"]
 _data = {
 &"AxeTool": SubResource("Animation_x35ji"),
@@ -393,7 +393,7 @@ _data = {
 radius = 19.0263
 
 [node name="Player" node_paths=PackedStringArray("CollisionShape") instance=ExtResource("1_t8hoq")]
-CollisionShape = NodePath("InteractionsArea/CollisionShape2D")
+CollisionShape = NodePath("InteractionsArea/Collision")
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -15)
@@ -411,6 +411,6 @@ libraries = {
 }
 autoplay = "IdleSide"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionsArea" index="0"]
+[node name="Collision" type="CollisionShape2D" parent="InteractionsArea" index="0"]
 position = Vector2(21, -12)
 shape = SubResource("CircleShape2D_7pihf")

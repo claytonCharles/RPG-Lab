@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://x3u8n1bsr4c4"]
+
+[ext_resource type="PackedScene" uid="uid://cdna0v1egexan" path="res://Maps/brimwood.tscn" id="1_xnqsq"]
+[ext_resource type="PackedScene" uid="uid://id4shu8a8gwj" path="res://Resources/Interactables/Tree/VerdantTree/verdant_tree.tscn" id="2_mnu07"]
+[ext_resource type="PackedScene" uid="uid://bxanagt4le4nf" path="res://Characters/player.tscn" id="3_sg1ye"]
+
+[node name="BrimwoodScene" type="Node2D"]
+
+[node name="Brimwood" parent="." instance=ExtResource("1_xnqsq")]
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="VerdantTree2" parent="World" instance=ExtResource("2_mnu07")]
+position = Vector2(304, 525)
+
+[node name="VerdantTree" parent="World" instance=ExtResource("2_mnu07")]
+position = Vector2(287, 329)
+
+[node name="Player" parent="World" instance=ExtResource("3_sg1ye")]
+position = Vector2(350, 300)

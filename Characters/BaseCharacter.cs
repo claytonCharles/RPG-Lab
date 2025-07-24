@@ -59,7 +59,8 @@ public partial class BaseCharacter : CharacterBody2D
 	{
 		if (Velocity.X != 0) {
 			_characterSprite.FlipH = Velocity.X < 0;
-			GD.Print(CollisionShape.Position);
+			int newPositionX = Velocity.X < 0 ? -21 : 21;
+			CollisionShape.Position = new Vector2(newPositionX, CollisionShape.Position.Y);
 		}
 		
 		if (!_canAction) {
@@ -103,6 +104,14 @@ public partial class BaseCharacter : CharacterBody2D
 			}
 			
 			_characterAnimations.Play("IdleSide");
+		}
+	}
+	
+	public void OnInteractionsBodyEntered(Node2D body)
+	{
+		if (body is VerdantTree tree) {
+			Random rnd = new();
+			tree.UpdateHealth(rnd.Next(1, 5));
 		}
 	}
 }

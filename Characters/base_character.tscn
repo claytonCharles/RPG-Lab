@@ -23,3 +23,4 @@ zoom = Vector2(2, 2)
 [node name="InteractionsArea" type="Area2D" parent="."]
 
 [connection signal="animation_finished" from="CharacterAnimation" to="." method="OnAnimationFinished"]
+[connection signal="body_entered" from="InteractionsArea" to="." method="OnInteractionsBodyEntered"]
