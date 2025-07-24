@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcr1yttwpw8un"]
 
-[ext_resource type="Script" uid="uid://b3r4amoc3g0yv" path="res://Scripts/Characters/BaseCharacter.cs" id="1_uqq7a"]
+[ext_resource type="Script" uid="uid://b3r4amoc3g0yv" path="res://Characters/BaseCharacter.cs" id="1_uqq7a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_176ng"]
 radius = 4.0
@@ -19,3 +19,7 @@ root_node = NodePath("")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="InteractionsArea" type="Area2D" parent="."]
+
+[connection signal="animation_finished" from="CharacterAnimation" to="." method="OnAnimationFinished"]
