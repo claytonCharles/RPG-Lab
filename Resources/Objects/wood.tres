@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://c33m42y3sunke"]
+
+[ext_resource type="Script" uid="uid://b57ghsc3n0wc0" path="res://Scripts/Resources/ItemData.cs" id="1_8257a"]
+
+[resource]
+script = ExtResource("1_8257a")
+id = "wood"
+Name = "Wood"
+Description = "Simple Wood"
+Value = 10
+metadata/_custom_type_script = "uid://b57ghsc3n0wc0"

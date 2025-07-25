@@ -6,10 +6,12 @@ public partial class VerdantTree : StaticBody2D
 {
 	private AnimationPlayer _animationObject;
 	
+	private Boolean _isDead = false;
+	
+	private String _prefabWood = "res://Prefabs/Items/wood.tscn";
+	
 	[Export]
 	public int Health;
-	
-	private Boolean _isDead = false;
 	
 	public override void _Ready()
 	{
@@ -33,6 +35,7 @@ public partial class VerdantTree : StaticBody2D
 		
 		if (Health <= 0) {
 			_isDead = true;
+			DropSystem.SpawnLoot(this, GlobalPosition, _prefabWood);
 			QueueFree();
 		}
 	}

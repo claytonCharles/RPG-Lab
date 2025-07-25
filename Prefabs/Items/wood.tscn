@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://casn840wj2qa0"]
+
+[ext_resource type="Script" uid="uid://qpp0blgrkw8j" path="res://Scripts/Items/Wood.cs" id="1_1c55c"]
+[ext_resource type="Texture2D" uid="uid://ck76mgw500j1o" path="res://Assets/Environment/Resources/W_Idle.png" id="2_gq6xk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hiwyv"]
+radius = 20.0
+
+[node name="Wood" type="Node2D"]
+script = ExtResource("1_1c55c")
+DataPath = "res://Resources/Objects/wood.tres"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gq6xk")
+
+[node name="WoodAnimations" type="AnimationPlayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hiwyv")
