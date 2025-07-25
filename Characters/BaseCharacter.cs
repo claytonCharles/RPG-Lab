@@ -23,9 +23,15 @@ public partial class BaseCharacter : CharacterBody2D
 	[Export]
 	public CollisionShape2D CollisionShape;
 	
-	[ExportGroup("Attributes")]
+	[ExportGroup("Status")]
 	[Export]
-	public int Speed { get; set; } = 200;
+	public int Speed { get; private set; } = 200;
+	
+	[Export]	
+	public int MaxHealth { get; private set; } = 100;
+	
+	[Export]	
+	public int CurrentHealth { get; private set; } = 100;
 	
 	public override void _Ready()
 	{
@@ -111,7 +117,8 @@ public partial class BaseCharacter : CharacterBody2D
 	{
 		if (body is VerdantTree tree) {
 			Random rnd = new();
-			tree.UpdateHealth(rnd.Next(1, 5));
+			int damage = rnd.Next(1, 5);
+			tree.UpdateHealth(damage);
 		}
 	}
 }

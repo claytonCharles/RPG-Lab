@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1yrtfxvfc07f"]
+
+[ext_resource type="Script" uid="uid://huqjfcu53nub" path="res://Scripts/HUD/MainHud.cs" id="1_76fd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0aweb"]
+bg_color = Color(5.77569e-07, 0.66327, 0.827989, 1)
+
+[node name="MainHUD" type="CanvasLayer" node_paths=PackedStringArray("Inventory")]
+script = ExtResource("1_76fd3")
+Inventory = NodePath("Inventory")
+
+[node name="Inventory" type="Panel" parent="."]
+visible = false
+offset_left = 700.0
+offset_top = 252.0
+offset_right = 1175.0
+offset_bottom = 624.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0aweb")

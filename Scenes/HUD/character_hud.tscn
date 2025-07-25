@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://djl1pggfujkr"]
+
+[ext_resource type="Script" uid="uid://cxhbf11n61erm" path="res://Scripts/HUD/CharacterHUD.cs" id="1_4mrgb"]
+[ext_resource type="PackedScene" uid="uid://03vjn5c1k8n0" path="res://Scenes/UI/health_bar.tscn" id="1_omyot"]
+
+[node name="CharacterHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4mrgb")
+
+[node name="HealthBar" parent="." instance=ExtResource("1_omyot")]
+layout_mode = 1
+step = 1.0
+value = 0.0

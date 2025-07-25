@@ -8,6 +8,6 @@ public partial class DropSystem : Node
 		PackedScene item = GD.Load<PackedScene>(prefabPath);
 		Node2D itemInstance = item.Instantiate<Node2D>();
 		itemInstance.Position = position;
-		context.GetParent().aCallDeferred("add_child", itemInstance);
+		context.GetParent().CallDeferred("add_child", itemInstance);
 	}
 }

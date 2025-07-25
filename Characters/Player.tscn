@@ -56,7 +56,7 @@ tracks/3/path = NodePath("InteractionsArea/Collision:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
+"times": PackedFloat32Array(0, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -248,7 +248,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_55lj8"]
@@ -390,7 +390,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7pihf"]
-radius = 19.0263
+radius = 16.0
 
 [node name="Player" node_paths=PackedStringArray("CollisionShape") instance=ExtResource("1_t8hoq")]
 CollisionShape = NodePath("InteractionsArea/Collision")
@@ -412,5 +412,6 @@ libraries = {
 autoplay = "IdleSide"
 
 [node name="Collision" type="CollisionShape2D" parent="InteractionsArea" index="0"]
-position = Vector2(21, -12)
+position = Vector2(21, -13)
 shape = SubResource("CircleShape2D_7pihf")
+disabled = true
